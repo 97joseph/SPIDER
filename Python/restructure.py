@@ -12,4 +12,4 @@ new_soup = BeautifulSoup(new_resp.text, 'lxml')
 links = new_soup.find_all('a')
 
 for link in links:
-    print(link.attrs['href'])
+    print(link.attrs)

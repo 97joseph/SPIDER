@@ -22,4 +22,3 @@ for one_a_tag in soup.findAll('a'):  #'a' tags are for links
         urllib.request.urlretrieve(download_url,'./'+link[link.find('/shops')+1:]) 
         time.sleep(1) #pause the code for a sec
     #add 1 for next line
-    line_count +=1

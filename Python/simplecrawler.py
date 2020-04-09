@@ -15,19 +15,22 @@ soup=BeautifulSoup(html,'lxml')
 
 
 #Next we parse the html with BeautifulSoup  so that we can  ork -with a nicer BeautifulSoup data structure
-links=soup.find_all('a')
+links=soup.find_all('span')
 
 for link in links:
     print(link)
 
-one_tag=soup.findAll('a')[36]
 
 
 print("The link is as follows")
+
+one_tag=soup.findAll('a')[36]
+
 print(one_tag['href'])
 
-print(soup.find_all('title'))
-print(soup.find_all('h'))
 
+print(soup.find_all('class="d-none d-lg-inline"'))
+for a in soup.select('span.d-none d-lg-inline'):
+    print(a.text, a.attrs['href'])
 
-
+         

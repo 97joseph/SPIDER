@@ -4,7 +4,7 @@ import time
 from bs4 import BeautifulSoup
 
 #Set the ulr to the website
-url='https://cryptwerk.com/'
+url='https://cryptwerk.com/companies/shop'
 
 #Method to call a baseUrl
 
@@ -17,8 +17,14 @@ soup=BeautifulSoup(html,'lxml')
 #Next we parse the html with BeautifulSoup  so that we can  ork -with a nicer BeautifulSoup data structure
 links=soup.find_all('span')
 
+print("Scrapping the data based on company details")
+
+time.sleep(6);
+
 for link in links:
+    time.sleep(1);
     print(link)
+    
 
 
 
@@ -32,5 +38,7 @@ print(one_tag['href'])
 print(soup.find_all('class="d-none d-lg-inline"'))
 for a in soup.select('span.d-none d-lg-inline'):
     print(a.text, a.attrs['href'])
+    for link in soup.find_all('a'):
+        print(link.get('href'))
 
          

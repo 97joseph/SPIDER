@@ -1,7 +1,16 @@
 from selenium import webdriver
 import bs4
 import pandas as pd
-chrome_path=r"C:\webdrivers"
+
+#firefox mthod
+#driver=webdriver.Firefox()
+#driver.get("url");
+
+
+
+
+#declare the chrome path
+chrome_path=r"C:\webdrivers\chromedriver\chromedriver.exe"
 driver = webdriver.Chrome(chrome_path)
 
 products=[] #List to store name of the product

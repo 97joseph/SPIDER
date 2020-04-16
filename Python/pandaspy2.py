@@ -1,6 +1,8 @@
 from selenium import webdriver
 import bs4
 import pandas as pd
+from bs4 import BeautifulSoup
+
 
 #firefox mthod
 #driver=webdriver.Firefox()
@@ -19,14 +21,14 @@ ratings=[] #List to store rating of the product
 driver.get("https://www.flipkart.com/laptops/~buyback-guarantee-on-laptops-/pr?sid=6bo%2Cb5g&uniq")
 
 content = driver.page_source
-soup = bs4(content)
+soup = BeautifulSoup(content,"lxml")
 for a in soup.findAll('a',href=True, attrs={'class':'_31qSD5'}):
                        name=a.find('div', attrs={'class':'_3wU53n'})
                        price=a.find('div', attrs={'class':'_1vC4OE _2rQ-NK'})
                        rating=a.find('div', attrs={'class':'hGSR34 _2beYZw'})
                        products.append(name.text)
                        prices.append(price.text)
-                       ratings.append(rating.text)
+                       ratings.append(rating)
 
 #store the data in the required format
 

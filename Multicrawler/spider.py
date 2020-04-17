@@ -3,6 +3,8 @@ from link_finder import LinkFinder
 from demo import *
 from domain import *
 
+
+#The class to structure the spider
 class Spider:
     project_name = ''
     base_url = ''
@@ -37,7 +39,7 @@ class Spider:
             Spider.queue.remove(page_url)
             Spider.crawled.add(page_url)
             Spider.update_files()
-
+ #Gather links gets all the links
     @staticmethod
     def gather_links(page_url):
         html_string = ''

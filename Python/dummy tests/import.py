@@ -21,4 +21,5 @@ for one_a_tag in soup.findAll('a'):  #'a' tags are for links
         download_url = 'https://cryptwerk.com/companies'+ link
         urllib.request.urlretrieve(download_url,'./'+link[link.find('/shops')+1:]) 
         time.sleep(1) #pause the code for a sec
+        print(link)
     #add 1 for next line

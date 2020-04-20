@@ -18,7 +18,7 @@ driver = webdriver.Chrome(chrome_path)
 products=[] #List to store name of the product
 prices=[] #List to store price of the product
 ratings=[] #List to store rating of the product
-driver.get("https://www.flipkart.com/laptops/~buyback-guarantee-on-laptops-/pr?sid=6bo%2Cb5g&uniq")
+driver.get("https://cryptwerk.com/companies/shops/")
 
 content = driver.page_source
 soup = BeautifulSoup(content,"lxml")

@@ -2,9 +2,9 @@ from bs4 import BeautifulSoup
 
 import requests
 
-url = input("https://cryptwerk.com/companies")
+url = input("https://cryptwerk.com/companies/shops")
 
-r  = requests.get("http://" +url)
+r  = requests.get("https://" +url)
 
 data = r.text
 
